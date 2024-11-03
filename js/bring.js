@@ -1,4 +1,3 @@
-//bring.js
 //search 버튼 누르면 데이터 가져오는 js
 
 
@@ -35,87 +34,6 @@ document.getElementById('fetchDataButton').addEventListener('click', async funct
   }
 });
 
-  
-
-//////// db에서 이름 가져와서 선택하고 버튼클릭하면 가져오기
-//이거쓸때는 server.js에서 /names부분 활성화
-//일단은 혹시 모르니 남겨두기..
-
-// document.addEventListener("DOMContentLoaded", async () => {
-//     try {
-//         const response = await fetch('http://127.0.0.1:5500/names'); // API 호출
-//         if (!response.ok) {
-//             throw new Error('Network response was not ok');
-//         }
-//         else{
-//             console.log('hi')
-//         }
-//         const names = await response.json(); // JSON 형식으로 응답 받기
-//         const selectElement = document.querySelector('.nice-select.form-control .list'); // 커스터마이즈된 셀렉트의 리스트 요소 선택
-
-//         // 기존 옵션 제거
-//         selectElement.innerHTML = ''; // 기존 옵션 초기화
-
-//         // 새로운 옵션 추가
-//         names.forEach(name => {
-//             const option = document.createElement('li');
-//             option.textContent = name.NAME; // 화면에 보일 이름 추가
-//             option.setAttribute('data-value', name.NAME); // 데이터 값 추가
-//             option.className = 'option'; // 옵션 클래스 추가
-//             selectElement.appendChild(option); // 리스트에 추가
-//         });
-
-//         // 기본 선택 항목 업데이트
-//         const currentElement = document.querySelector('.nice-select.form-control .current');
-//         currentElement.textContent =  '이름 선택'; // 첫 번째 이름으로 기본 선택 업데이트
-//     } catch (error) {
-//         console.error('Failed to fetch names:', error);
-//     }
-// });
-
-
-
-// document.getElementById('fetchDataButton').addEventListener('click', async function() {
-//     // 선택된 이름 가져오기
-//     const selectedOption = document.querySelector('.nice-select.form-control .list .option.selected');
-//     if (!selectedOption) {
-//         alert("이름을 선택해 주세요.");
-//         return;
-//     }
-  
-//     const name = selectedOption.getAttribute('data-value'); // 선택된 이름의 value 가져오기
-  
-//     try {
-//         const response = await fetch(`/fetchData?name=${encodeURIComponent(name)}`);
-//         if (!response.ok) {
-//             throw new Error('Network response was not ok');
-//         }
-//         const data = await response.json();
-//         console.log('Fetched data:', data);
-//         displayData(data);
-//     } catch (error) {
-//         console.error('Failed to fetch data:', error);
-//     }
-// });
-
-// function displayData(data) {
-//     const resultDiv = document.getElementById('result');
-//     resultDiv.innerHTML = '';
-  
-//     if (data.length === 0) {
-//         resultDiv.textContent = "일치하는 데이터가 없습니다.";
-//         return;
-//     }
-  
-//     data.forEach(row => {
-//         const div = document.createElement('div');
-//         div.textContent = JSON.stringify(row);
-//         resultDiv.appendChild(div);
-//     });
-// }
-
-
-//여기까지
 
 
 //데이터 보여주기 (db에서 가져와서 표형식으로)
@@ -155,6 +73,10 @@ function displayData(data) {
       yearCell.textContent = item.Year; // 연도
       row.appendChild(yearCell);
 
+      const teamCell = document.createElement('td');
+      teamCell.textContent = item.Team; // 연도
+      row.appendChild(teamCell);
+
       const positionCell = document.createElement('td');
       positionCell.textContent = selectedPosition.charAt(0).toUpperCase() + selectedPosition.slice(1); // 포지션
       row.appendChild(positionCell);
@@ -162,16 +84,58 @@ function displayData(data) {
       const salaryCell = document.createElement('td');
       salaryCell.textContent = item.Salary ? `$${item.Salary}` : ''; // 연봉
       row.appendChild(salaryCell);
-
+      
       const salaryNyCell = document.createElement('td');
       salaryNyCell.textContent = item['Salary(ny)'] ? `$${item['Salary(ny)']}` : ''; // 다음 해 연봉
       row.appendChild(salaryNyCell);
-
+      
       const predSalaryCell = document.createElement('td');
       predSalaryCell.textContent = item['Pred_Salary'] !== undefined ? `$${item['Pred_Salary']}` : ''; // 예측된 연봉
       row.appendChild(predSalaryCell);
+      
 
       tableBody.appendChild(row); // 행을 <tbody>에 추가
   });
 }
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const playerNameInput = document.getElementById("player-name");
+  const positionSelect = document.getElementById("positionSelect");
+  const nameSuggestions = document.getElementById("nameSuggestions");
+
+  // name 입력란에서 사용자가 입력할 때마다 자동완성 목록을 가져옴
+  playerNameInput.addEventListener("input", async () => {
+    const name = playerNameInput.value.trim();
+    const position = positionSelect.value;
+
+    if (name.length < 1) return; // 최소 1자 이상 입력 시 조회
+
+    try {
+      // position과 name 값을 포함하여 API 요청
+      const response = await fetch(`/fetchNames?name=${encodeURIComponent(name)}&position=${encodeURIComponent(position)}`);
+      if (response.ok) {
+        const names = await response.json();
+
+        // 입력한 이름과 일치하는 이름이 있으면 datalist 초기화
+        if (names.includes(name)) {
+          nameSuggestions.innerHTML = ""; // datalist 초기화
+          return;
+        }
+
+        // 자동완성 옵션을 비우고 새로운 목록 추가
+        nameSuggestions.innerHTML = ""; // datalist 초기화
+        names.forEach(name => {
+          const option = document.createElement("option");
+          option.value = name;
+          nameSuggestions.appendChild(option);
+        });
+      } else {
+        console.error("Failed to fetch names");
+      }
+    } catch (error) {
+      console.error("Error fetching names:", error);
+    }
+  });
+});
