@@ -12,7 +12,7 @@ const port = process.env.PORT || 5500;
 const host = process.env.HOST || "0.0.0.0";
 
 // const port = 5500; // 포트 번호를 5500으로 변경
-// const host = "127.0.0.1"; // 호스트를 127.0.0.1로 변경
+//const host = "127.0.0.1"; // 본인 로컬 환경에서 돌릴때는 호스트를 127.0.0.1로 변경
 
 db.init(); // 데이터베이스 연결 풀 초기화
 
