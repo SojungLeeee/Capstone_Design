@@ -8,11 +8,11 @@ const path = require('path');
 const db = require("./js/mysql"); // 수정된 mysql.js 모듈
 
 const app = express();
-// const port = process.env.PORT || 3030;
-// const host = process.env.HOST || "0.0.0.0";
+const port = process.env.PORT || 5500;
+const host = process.env.HOST || "0.0.0.0";
 
-const port = 5500; // 포트 번호를 5500으로 변경
-const host = "127.0.0.1"; // 호스트를 127.0.0.1로 변경
+// const port = 5500; // 포트 번호를 5500으로 변경
+// const host = "127.0.0.1"; // 호스트를 127.0.0.1로 변경
 
 db.init(); // 데이터베이스 연결 풀 초기화
 
