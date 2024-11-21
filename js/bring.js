@@ -82,15 +82,15 @@ function displayData(data) {
       row.appendChild(positionCell);
 
       const salaryCell = document.createElement('td');
-      salaryCell.textContent = item.Salary ? `$${item.Salary}` : ''; // 연봉
+      salaryCell.textContent = item.Salary ? `$ ${item.Salary}` : ''; // 연봉
       row.appendChild(salaryCell);
       
       const salaryNyCell = document.createElement('td');
-      salaryNyCell.textContent = item['Salary(ny)'] ? `$${item['Salary(ny)']}` : ''; // 다음 해 연봉
+      salaryNyCell.textContent = item['Salary(ny)'] ? `$ ${item['Salary(ny)']}` : ''; // 다음 해 연봉
       row.appendChild(salaryNyCell);
       
       const predSalaryCell = document.createElement('td');
-      predSalaryCell.textContent = item['Pred_Salary'] !== undefined ? `$${item['Pred_Salary']}` : ''; // 예측된 연봉
+      predSalaryCell.textContent = item['Pred_Salary'] !== undefined ? `$ ${item['Pred_Salary']}` : ''; // 예측된 연봉
       row.appendChild(predSalaryCell);
       
 

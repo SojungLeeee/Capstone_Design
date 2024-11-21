@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MLB &mdash; Data Analysis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="freehtml5.co" />
+
+	<link rel="icon" href="favicon.ico">
+
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center logo-wrap">
+					<div id="fh5co-logo"><a href="main_home.html">Major League Baseball<span href="index.html">.</span></a></div>
+				</div>
+				<div class="col-xs-12 text-center menu-1 menu-wrap">
+					<ul>
+						<li class="active"><a href="main_home.html">Home</a></li>
+						<li><a href="player.html">Player</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="history.html">History</a></li>
+						<li><a href="contact.html">More</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+
+	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image: url(images/hero_1.jpeg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="display-t js-fullheight">
+						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+							<h2>끝날 때까지 끝난게 아니다.</h2>
+							<h2>"It ain't over till it's over."</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="fh5co-about" class="fh5co-section">
+		<div class="container">
+			<div class="row">
+				<img src="images/mlb1.jpg" alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-featured-menu" class="fh5co-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 fh5co-heading animate-box">
+					<h2>MLB Salary Data Prediction</h2>
+					<div class="row">
+						<div class="col-md-6">
+							<p>이 웹페이지는 선수 연봉 예측 데이터를 기반으로 제작되었으며, XGBoost와 CatBoost 모델을 활용하여 예측 정확도를 높였습니다.
+								<br> CSV 파일과 웹 크롤링을 통해 수집된 데이터를 데이터베이스에 연동하여, 사용자들이 손쉽게 검색하고 정보를 확인할 수 있도록 구현되었습니다.
+								<br> 예측 모델의 성능은 F1-Score와 Accuracy를 주요 평가 지표로 삼아, 최적화 과정을 통해 정확도를 80%까지 끌어올렸습니다. 웹 크롤링 작업을 통해 선수와 관련된 다양한 정보를 확보하여, 더욱 풍부한 데이터 분석이 가능하도록 구성하였습니다.
+								<br><br> <strong>선수 연봉 예측과 데이터 분석 결과를 손쉽게 확인하고 활용해 보세요!</strong>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-featured-testimony" class="fh5co-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 fh5co-heading animate-box">
+					<h2>선수 연봉 검색</h2>
+					<div class="row">
+						<div class="salary_container">
+							<!-- hi -->
+							<!-- <form action="/search" method="post"> -->
+							<label for="player-name">Player Name:</label>
+							<!-- <input type="text" id="player-name" name="player_name" placeholder="Enter player name, only English" required> -->
+							<input type="text" id="player-name" name="player_name" placeholder="Enter player name, only English" list="nameSuggestions" style="color: black;" required>
+							<datalist id="nameSuggestions"></datalist>
+				
+							<label for="year">Year:</label>
+							<input type="text" id="year" name="year" placeholder="Enter year (e.g., 2023)" style="color: black;" required>
+				
+							<label for="position">Position:</label>
+							<select id="positionSelect" name="position">
+								<option value="Pitcher">Pitcher</option>
+								<option value="Hitter">Hitter</option>
+							</select>
+				
+							<button type="submit" id="fetchDataButton">Search</button>
+							<!-- </form> -->
+					
+							<table>
+								<thead>
+									<tr>
+										<th>Player Name</th>
+										<th>Year</th>
+										<th>Team</th>
+										<th>Position</th>
+										<th>Salary</th>
+										<th>Salary(ny)</th>
+										<th>Pred_Salary</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sample Player A</td>
+										<td>2023</td>
+										<td>Team_1</td>
+										<td>Pitcher</td>
+										<td>$5M</td>
+										<td>$6M</td>
+										<td>$5.5M</td>
+									</tr>
+									<tr>
+										<td>Sample Player B</td>
+										<td>2023</td>
+										<td>Team_2</td>
+										<td>Hitter</td>
+										<td>$3M</td>
+										<td>$3.5M</td>
+										<td>$3.2M</td>
+									</tr>
+									<tr>
+										<td>Sample Player C</td>
+										<td>2023</td>
+										<td>Team_3</td>
+										<td>Pitcher</td>
+										<td>$2M</td>
+										<td>$2.5M</td>
+										<td>$2.3M</td>
+									</tr>
+									<tr>
+										<td>Sample Player D</td>
+										<td>2023</td>
+										<td>Team_4</td>
+										<td>Hitter</td>
+										<td>$1M</td>
+										<td>$1.2M</td>
+										<td>$1.1M</td>
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="padding"></div>
+	
+	<div id="fh5co-started" class="fh5co-section animate-box" style="background-image: url(images/hero_1.jpeg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Visit the Official Website</h2>
+					<p>We gave you a brief introduction and background of Major League Baseball on the website.
+						 And We wanted to show you the analysis of Major League Baseball in an easy-to-understand way. For more questions, please check the official website.</p>
+						<p><a href="https://www.mlb.com" class="btn btn-primary btn-outline">Visit Now</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="fh5co-footer" role="contentinfo" class="fh5co-section">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h4>Greeting</h4>
+					<p>Our homepage is made by processing free html. It's not good enough, but I just want to say thank you to everyone who came to see the homepage.
+						<br>Have a great day!</p>
+				</div>
+				<div class="col-md-2 col-md-push-1 fh5co-widget">
+					<h4>Producter</h4>
+					<ul class="fh5co-footer-links">
+						<li><a>이도윤</a></li>
+						<li><a>이소정</a></li>
+						<li><a>이호영</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-2 col-md-push-1 fh5co-widget">
+					<h4>Categories</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="index.html">Intro</a></li>
+						<li><a href="main_home.html">Home</a></li>
+						<li><a href="player.html">Player</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="history.html">History</a></li>
+						<li><a href="contact.html">More</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 col-md-push-1 fh5co-widget">
+					<h4>Contact Information</h4>
+					<ul class="fh5co-footer-links">
+						<li>대한민국 부산광역시, <br> 남구 용소로 45 웅비관</li>
+						<li><a>+ 010 6352 1497</a></li>
+						<li><a>dlehdbs01@naver.com</a></li>
+						<li><a href="http://https://freehtml5.co">freehtml5.co</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://x.com/mlb"><i class="icon-twitter2"></i></a></li>
+							<li><a href="https://www.facebook.com/mlb"><i class="icon-facebook2"></i></a></li>
+							<li><a href="https://www.instagram.com/mlb"><i class="icon-linkedin2"></i></a></li>
+							<li><a href="https://www.mlb.com"><i class="icon-dribbble2"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+	</div>
+	
+	<!-- DB-->
+	<script src="/js/bring.js"></script>
+    <!-- <script src="/js/mysql.js"></script> -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Main -->
+	<script src="main.js"></script>
+	<script src="index.js"></script>
+	<script src="js/bring.js"></script>
+
+	</body>
+</html>
+

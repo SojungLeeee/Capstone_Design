@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" />
+    <title>Salary</title>
+</head>
+<body>
+    <header>
+        <h1>Baseball Salary Search - PITCHER, HITTER</h1>
+    </header>
+    <div class="container">
+        <!-- hi -->
+        <h2>선수 연봉 검색</h2>
+        <!-- <form action="/search" method="post"> -->
+            <label for="player-name">Player Name:</label>
+            <!-- <input type="text" id="player-name" name="player_name" placeholder="Enter player name, only English" required> -->
+            <input type="text" id="player-name" name="player_name" placeholder="Enter player name, only English" list="nameSuggestions" required>
+            <datalist id="nameSuggestions"></datalist>
+
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" placeholder="Enter year (e.g., 2023)" required>
+
+            <label for="position">Position:</label>
+            <select id="positionSelect" name="position">
+                <option value="Pitcher">Pitcher</option>
+                <option value="Hitter">Hitter</option>
+            </select>
+
+            <button type="submit" id="fetchDataButton">Search</button>
+        <!-- </form> -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Player Name</th>
+                    <th>Year</th>
+                    <th>Team</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                    <th>Salary(ny)</th>
+                    <th>Pred_Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sample Player A</td>
+                    <td>2023</td>
+                    <td>Team_1</td>
+                    <td>Pitcher</td>
+                    <td>$5M</td>
+                    <td>$6M</td>
+                    <td>$5.5M</td>
+                </tr>
+                <tr>
+                    <td>Sample Player B</td>
+                    <td>2023</td>
+                    <td>Team_2</td>
+                    <td>Hitter</td>
+                    <td>$3M</td>
+                    <td>$3.5M</td>
+                    <td>$3.2M</td>
+                </tr>
+                <tr>
+                    <td>Sample Player C</td>
+                    <td>2023</td>
+                    <td>Team_3</td>
+                    <td>Pitcher</td>
+                    <td>$2M</td>
+                    <td>$2.5M</td>
+                    <td>$2.3M</td>
+                </tr>
+                <tr>
+                    <td>Sample Player D</td>
+                    <td>2023</td>
+                    <td>Team_4</td>
+                    <td>Hitter</td>
+                    <td>$1M</td>
+                    <td>$1.2M</td>
+                    <td>$1.1M</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script src="/js/bring.js"></script>
+    <!-- <script src="/js/mysql.js"></script> -->
+
+
+</body>
+</html>

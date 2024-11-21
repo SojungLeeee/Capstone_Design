@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 5500;
 const host = process.env.HOST || "0.0.0.0";
 
-// const port = 5500; // 포트 번호를 5500으로 변경
+//const port = 5500; // 포트 번호를 5500으로 변경
 //const host = "127.0.0.1"; // 본인 로컬 환경에서 돌릴때는 호스트를 127.0.0.1로 변경
 
 db.init(); // 데이터베이스 연결 풀 초기화
@@ -21,18 +21,44 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors()); // CORS를 전체로 허용하도록 설정
 
 // 정적 파일 제공
+app.use(express.static(path.join(__dirname)));
+app.use('/assets', express.static(path.join(__dirname, '/assets')));
 app.use('/css', express.static(path.join(__dirname, '/css')));
+app.use('/sass', express.static(path.join(__dirname, '/sass')));
+app.use('/tasty', express.static(path.join(__dirname, '/tasty')));
 app.use('/images', express.static(path.join(__dirname, '/images')));
 app.use('/js', express.static(path.join(__dirname, '/js')));
 
 // 기본 라우트 설정
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
+
+app.get('/main_home.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '/main_home.html'));
+});
+
+app.get('/history.html', (req, res) => {
+  console.log("Serving /history.html");
+  res.sendFile(path.join(__dirname, '/history.html'));
+});
+
+app.get('/gallery.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '/gallery.html'));
+});
+
+app.get('/contact.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '/contact.html'));
+});
+
+app.get('/player.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '/player.html'));
+});
+
 
 // 이름 또는 연도 중 택 1개를 하면 DB에서 일치하는 내용 가져오기
 app.get("/fetchData", async (req, res) => {

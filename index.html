@@ -1,93 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet" />
-    <title>Salary</title>
-</head>
-<body>
-    <header>
-        <h1>Baseball Salary Search - PITCHER, HITTER</h1>
-    </header>
-    <div class="container">
-        <!-- hi -->
-        <h2>선수 연봉 검색</h2>
-        <!-- <form action="/search" method="post"> -->
-            <label for="player-name">Player Name:</label>
-            <!-- <input type="text" id="player-name" name="player_name" placeholder="Enter player name, only English" required> -->
-            <input type="text" id="player-name" name="player_name" placeholder="Enter player name, only English" list="nameSuggestions" required>
-            <datalist id="nameSuggestions"></datalist>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MLB Intro</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-            <label for="year">Year:</label>
-            <input type="text" id="year" name="year" placeholder="Enter year (e.g., 2023)" required>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-            <label for="position">Position:</label>
-            <select id="positionSelect" name="position">
-                <option value="Pitcher">Pitcher</option>
-                <option value="Hitter">Hitter</option>
-            </select>
+		<style>
+			.play-pause-button {
+				font-size: 10px;
+				width: 30px;
+				height: 30px;
+				background-size: cover;
+				cursor: pointer;
+	
+				border: 2px solid black;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-            <button type="submit" id="fetchDataButton">Search</button>
-        <!-- </form> -->
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Player Name</th>
-                    <th>Year</th>
-                    <th>Team</th>
-                    <th>Position</th>
-                    <th>Salary</th>
-                    <th>Salary(ny)</th>
-                    <th>Pred_Salary</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Sample Player A</td>
-                    <td>2023</td>
-                    <td>Team_1</td>
-                    <td>Pitcher</td>
-                    <td>$5M</td>
-                    <td>$6M</td>
-                    <td>$5.5M</td>
-                </tr>
-                <tr>
-                    <td>Sample Player B</td>
-                    <td>2023</td>
-                    <td>Team_2</td>
-                    <td>Hitter</td>
-                    <td>$3M</td>
-                    <td>$3.5M</td>
-                    <td>$3.2M</td>
-                </tr>
-                <tr>
-                    <td>Sample Player C</td>
-                    <td>2023</td>
-                    <td>Team_3</td>
-                    <td>Pitcher</td>
-                    <td>$2M</td>
-                    <td>$2.5M</td>
-                    <td>$2.3M</td>
-                </tr>
-                <tr>
-                    <td>Sample Player D</td>
-                    <td>2023</td>
-                    <td>Team_4</td>
-                    <td>Hitter</td>
-                    <td>$1M</td>
-                    <td>$1.2M</td>
-                    <td>$1.1M</td>
-                </tr>
-            </tbody>
-        </table>
-        
-    </div>
+				<!-- Main -->
+					<section id="main">
 
-    <script src="/js/bring.js"></script>
-    <!-- <script src="/js/mysql.js"></script> -->
+						<!-- Items -->
+							<div class="items">
 
+								<div class="item intro span-2" id="animation" onclick="document.location.href='main_home.html'">
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									<h1 id="t1_title">Major League Baseball</h1>
+									<p>If you'd like to see more details<br />
+									Click here to get to MLB Data Site</p>
+								</div>
 
-</body>
+								<!-- 1 -->
+								<article class="item thumb span-1">
+									<h2>뉴욕 양키스</h2>
+									<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>세인트루이스 카디널스</h2>
+									<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>오클랜드 어슬레틱스</h2>
+									<a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>보스턴 레드삭스</h2>
+									<a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-3">
+									<h2>시카고 화이트삭스</h2>
+									<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>세인트루이스 카디널스</h2>
+									<a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>샌프란시스코 자이언츠</h2>
+									<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>샌프란시스코 자이언츠</h2>
+									<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a>
+								</article>
+
+								<!-- 2 -->
+								<article class="item thumb span-2">
+									<h2>보스턴 레드삭스</h2>
+									<a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>캔자스서티 로열스</h2>
+									<a href="images/fulls/10.jpg" class="image"><img src="images/thumbs/10.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>시카고 컵스</h2>
+									<a href="images/fulls/11.jpg" class="image"><img src="images/thumbs/11.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>휴스턴 애스트로스</h2>
+									<a href="images/fulls/12.jpg" class="image"><img src="images/thumbs/12.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>워싱턴 내셔널스</h2>
+									<a href="images/fulls/13.jpg" class="image"><img src="images/thumbs/13.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-3">
+									<h2>LA 다저스</h2>
+									<a href="images/fulls/14.jpg" class="image"><img src="images/thumbs/14.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>애틀랜타 브레이브스</h2>
+									<a href="images/fulls/15.jpg" class="image"><img src="images/thumbs/15.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>휴스턴 애스트로스</h2>
+									<a href="images/fulls/16.jpg" class="image"><img src="images/thumbs/16.jpg" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>텍사스 레인저스</h2>
+									<a href="images/fulls/17.jpg" class="image"><img src="images/thumbs/17.jpg" alt=""></a>
+								</article>
+
+							</div>
+
+						<!-- Items -->
+							<div class="items">
+								<article class="item thumb span-3"><h2>시카고 화이트삭스</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>세인트루이스 카디널스</h2><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>워싱턴 내셔널스</h2><a href="images/fulls/13.jpg" class="image"><img src="images/thumbs/13.jpg" alt=""></a></article>
+								<article class="item thumb span-3"><h2>LA 다저스</h2><a href="images/fulls/14.jpg" class="image"><img src="images/thumbs/14.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>샌프란시스코 자이언츠</h2><a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>캔자스서티 로열스</h2><a href="images/fulls/10.jpg" class="image"><img src="images/thumbs/10.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>애틀랜타 브레이브스</h2><a href="images/fulls/15.jpg" class="image"><img src="images/thumbs/15.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>휴스턴 애스트로스</h2><a href="images/fulls/16.jpg" class="image"><img src="images/thumbs/16.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>뉴욕 양키스</h2><a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>세인트루이스 카디널스</h2><a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>텍사스 레인저스</h2><a href="images/fulls/17.jpg" class="image"><img src="images/thumbs/17.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>보스턴 레드삭스</h2><a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>샌프란시스코 자이언츠</h2><a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>오클랜드 어슬레틱스</h2><a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>LA 다저스</h2><a href="images/fulls/18.jpg" class="image"><img src="images/thumbs/18.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>보스턴 레드삭스</h2><a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a></article>
+								<article class="item thumb span-1"><h2>휴스턴 애스트로스</h2><a href="images/fulls/12.jpg" class="image"><img src="images/thumbs/12.jpg" alt=""></a></article>
+								<article class="item thumb span-2"><h2>시카고 컵스</h2><a href="images/fulls/11.jpg" class="image"><img src="images/thumbs/11.jpg" alt=""></a></article>
+
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<section>
+							<p>This site is made of simple <strong>mld-data-analysis</strong>, and I used pictures from <a href="https://www.mlb.com/">MLB Site</a> or <a>Club Sites</a>. I will try to make a satisfactory homepage.</p>
+						</section>
+						<section>
+							<ul class="icons">
+								<li><a href="https://x.com/mlb" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.instagram.com/mlb/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.facebook.com/mlb" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.mlb.com/" class="icon brands fa-dribbble"><span class="label">Web</span></a></li>
+								<li><a href="https://www.youtube.com/user/MLB" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; <a href="https://placid-blob-2ec.notion.site/Doyun-Portfolio-c1d1fafe51af4b64bbec8766fc40438f?pvs=74">LTE</a></li>
+								<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>
+									<audio id="player" src="Trumpet_Narco.mp3" loop></audio>
+									<button id="muteButton" class="play-pause-button" onclick="toggleMute()" title="음악 ONOFF">■</button>
+								</li>
+							</ul>
+						</section>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+
+		<script>
+
+			document.addEventListener('DOMContentLoaded', function() {
+				var audioPlayer = document.getElementById('player');
+				var muteButton = document.getElementById('muteButton');
+
+				audioPlayer.play().catch(function(error) {
+					console.log('Autoplay was prevented: ', error);
+				});
+
+				audioPlayer.addEventListener('play', function() {
+					muteButton.textContent = '■';
+				});
+
+				audioPlayer.addEventListener('pause', function() {
+					muteButton.textContent = '▶';
+				});
+			});
+
+			function toggleMute() {
+				var audioPlayer = document.getElementById('player');
+				var muteButton = document.getElementById('muteButton');
+				audioPlayer.muted = !audioPlayer.muted;
+				muteButton.textContent = audioPlayer.muted ? '▶' : '■';
+			}
+
+		</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
